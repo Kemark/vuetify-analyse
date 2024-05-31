@@ -6,12 +6,14 @@
 
 // Plugins
 import { registerPlugins } from '@/plugins'
-
-// Components
 import App from './App.vue'
+import { createApp, defineCustomElement } from 'vue';
+import Component from './components/Components.vue';
 
-// Composables
-import { createApp } from 'vue'
+
+// create a custom component
+const myApp = defineCustomElement(Component);
+customElements.define('my-app', myApp);
 
 const app = createApp(App)
 
